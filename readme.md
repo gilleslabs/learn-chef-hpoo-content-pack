@@ -41,7 +41,9 @@ By default **chef-mgmt-win** VM Windows Firewall is enabled.
 HP-OO learn-chef content pack relies on RPC to pass instruction to chef-mgmt-win VM, **please ensure to allow RPC traffic in Windows firewall rules** 
 For the sake of simplicity you can also simply disable Windows Firewall on chef-mgmt-win VM.
 
-####Integrate HP-OO learn-chef content Pack in HP Operations Orchestrator Studio
+
+
+####Integrate HP-OO learn-chef content Pack in HP Operations Orchestrator Studio:
 
 
 
