@@ -26,14 +26,13 @@ These flows are based on [HP-OO Chef Content Pack 1.1.4] (https://hpln.hpe.com/c
 
 #####Getting started:
 
-1. If not already done, install learn-chef :
+a. If not already done, install learn-chef :
 ```
 git clone https://github.com/gilleslabs/learn-chef
 cd learn-chef
 ```
 
-
-2. If not already done, launch Chef Server environment (Chef Server + Windows 2012R2 Workstation + Node)
+b. If not already done, launch Chef Server environment (Chef Server + Windows 2012R2 Workstation + Node)
 
 `vagrant up chef-server node chef-mgmt-win`
 
