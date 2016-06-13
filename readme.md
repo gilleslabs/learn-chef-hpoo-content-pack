@@ -24,7 +24,7 @@ These flows are based on [HP-OO Chef Content Pack 1.1.4] (https://hpln.hpe.com/c
 
 ## Installation
 
-####Getting started:
+#####Getting started:
 
 1. If not already done, install learn-chef :
 ```
@@ -43,7 +43,7 @@ For the sake of simplicity you can also simply disable Windows Firewall on chef-
 
 
 
-####Integrate HP-OO learn-chef content Pack in HP Operations Orchestrator Studio:
+#####Integrate HP-OO learn-chef content Pack in HP Operations Orchestrator Studio:
 
 
 
