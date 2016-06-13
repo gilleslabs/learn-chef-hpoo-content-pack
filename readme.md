@@ -24,7 +24,7 @@ These flows are based on [HP-OO Chef Content Pack 1.1.4] (https://hpln.hpe.com/c
 
 ## Installation
 
-#####Getting started:
+####Getting started:
 
 a. If not already done, install learn-chef :
 ```
@@ -43,7 +43,7 @@ b. If not already done, launch Chef Server environment (Chef Server + Windows 20
 
 
 
-#####Integrate HP-OO learn-chef content Pack in HP Operations Orchestrator Studio:
+####Integrate HP-OO learn-chef content Pack in HP Operations Orchestrator Studio:
 
 
 
