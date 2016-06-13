@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="2394bc13-3831-407a-a529-9f31873ca302">
+  <descriptionCdata><![CDATA[2394bc13-3831-407a-a529-9f31873ca302.08148f76-51be-433d-9570-102fae513617.prompt=The path to the chef repository (The chef-repo folder).
+2394bc13-3831-407a-a529-9f31873ca302.11f6dff1-a885-4b37-bad1-f203036c169e.prompt=The name/fqdn of a host which runs Chefs APi client (knife).
+2394bc13-3831-407a-a529-9f31873ca302.87c35e15-dec0-412c-9c0a-e33ede74825d.prompt=The apiHostUser's password.
+2394bc13-3831-407a-a529-9f31873ca302.bfa69586-e2da-4df5-90ab-121371545c85.prompt=A user name with sufficient rights to run the knife commands.
+2394bc13-3831-407a-a529-9f31873ca302.bfaf9b77-4575-4541-b707-51c2cc166771.prompt=Time out for the operation, populates the OOB timeout variable.
+2394bc13-3831-407a-a529-9f31873ca302.d0033ec2-a08d-4b03-9193-581346500cff.prompt=The name of the cookbook to upload.
+2394bc13-3831-407a-a529-9f31873ca302.description=\#\#\#\#\#\#\#\#\#\#\#\#\#Additional Parameters\#\#\#\#\#\#\#\#\#\#\#\#\#\#\nThis operation uploads a cookbook from the Chef client's local repository to the Chef server.\n\nInputs\:\ncookbookName - The name of the cookbook to upload.\nresponseTimeOut - Time out for the operation, populates the OOB timeout variable.\napiHostName - The name/fqdn of a host which runs Chefs APi client (knife).\napiHostUser - A user name with sufficient rights to run the knife commands.\napiHostPassword - The apiHostUser's password.\napiHostRepo - The path to the chef repository (The chef-repo folder).\n\n\#\#\#\#\#\#\#\#\#\#\#\#\#Original Description\#\#\#\#\#\#\#\#\#\#\#\#\#\#\n\n\n\n<pre>\nUses WMI to attempt to create a remote process on a machine.  The command passed should be formatted as though it was run on the command line.\n\nCAUTION\: internally 'cmd /c' gets prepended to the command passed.  Also '2>tempfile 1>tempfile' get appended to the command so that we can attempt to capture stdout and stderr.\nSo your command will look like this when executed\:\n\t'cmd /c [yourcommand] 2>temperr 1>tempout'\n\nInputs\:\n    host - Hostname or ip address of the target machine.\n    command - The command you want executed. Special characters\: <, >, (, ), & need to be escaped using the caret (^) character.  The only exception to this rule is when the > character is used to redirect output.\n    user - Username to use for remote WMI impersonation and thread impersonation on the RAS host for this operation (can be left blank).\n    password - Password of the user.\n    outputPath - Network accessible path used by the operation to store temporary files. If not specified it points to \\\\host\\admin$\\temp\\'. If this path is not accessible you should change it to use another share that the host local system account has write access to. By default the path will have to be changed on Windows 2000 systems.\n    currentDirectory - Current directory.\n    characterSet - The character encoding used to write the batch file that will be remotely executed by the operation. Unicode character encodings may not supported for this input (utf-8, utf-16, etc.).  Support for unicode encodings depends on target system capabilities.  By default this encoding will also be used to read the command output that is redirected to temporary files.  If the command output is expected to be of different encoding, specify the different encoding in the outputCharacterSet input.  Default value\: The encoding of the operating system where is RAS installed.\nExamples\: ibm437, shift_jis\n    outputCharacterSet - The character encoding used to read the command output that was redirected to temporary files.  Only need to specify this input if the output of the command is known to output a different character encoding.  As an example\: the 'wmic' command returns utf-16 encoded output.\nExamples\: ibm437, shift_jis, utf-8, utf-16\n    timeout - The number of seconds before assuming the remote process is no longer functional. After the timeout has expired the remote process and all child processes will be terminated.\nDefault value\: 90\n\nResponses\:\n    success - Remote process successfully launched and has completed executing.\n    failure - Unable to start remote process.\n\nResults\:\n    returnResult - Return value from WMI for starting the process (not the exit value of the process).\n    processID - The process id of the remote process.\n    processReturnCode - The return code of the remote process.\n    stdOut - Standard output from the remote process.\n    stdErr - Standard error from the remote process.\n\nNotes\: \nList of possible encoding names (Support for the encoding may depend on the version or language of the RAS OS)\:\n\nEncoding Name\:\tDescription\:\nIBM437\t\tOEM United States\nDOS-720\t\tArabic (DOS)\nibm737\t\tGreek (DOS)\nibm775\t\tBaltic (DOS)\nibm850\t\tWestern European (DOS)\nibm852\t\tCentral European (DOS)\nIBM855\t\tOEM Cyrillic\nibm857\t\tTurkish (DOS)\nIBM00858\t\tOEM Multilingual Latin I\nIBM860\t\tPortuguese (DOS)\nibm861\t\tIcelandic (DOS)\nDOS-862\t\tHebrew (DOS)\nIBM863\t\tFrench Canadian (DOS)\nIBM864\t\tArabic (864)\nIBM865\t\tNordic (DOS)\ncp866\t\tCyrillic (DOS)\nibm869\t\tGreek, Modern (DOS)\nshift_jis\t\tJapanese (Shift-JIS)\ngb2312\t\tChinese Simplified (GB2312)\nks_c_5601-1987\tKorean\nbig5\t\tChinese Traditional (Big5)\nutf-16\t\tUnicode\nunicodeFFFE\t\tUnicode (Big-Endian)\nutf-7\t\tUnicode (UTF-7)\nutf-8\t\tUnicode (UTF-8)\nutf-32\t\tUnicode (UTF-32)\nutf-32BE\t\tUnicode (UTF-32 Big-Endian)\nJohab\t\tKorean (Johab)\nus-ascii\t\tUS-ASCII\nkoi8-r\t\tCyrillic (KOI8-R)\neuc-jp\t\tJapanese (EUC)\nEUC-CN\t\tChinese Simplified (EUC)\neuc-kr\t\tKorean (EUC)\nhz-gb-2312\t\tChinese Simplified (HZ)\nGB18030\t\tChinese Simplified (GB18030)\n</pre>
+]]></descriptionCdata>
+  <annotation>2394bc13-3831-407a-a529-9f31873ca302.description</annotation>
+  <name>Upload a Cookbook to Server</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="bfaf9b77-4575-4541-b707-51c2cc166771">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>responseTimeOut</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>2394bc13-3831-407a-a529-9f31873ca302.bfaf9b77-4575-4541-b707-51c2cc166771.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="d0033ec2-a08d-4b03-9193-581346500cff">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>cookbookName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>2394bc13-3831-407a-a529-9f31873ca302.d0033ec2-a08d-4b03-9193-581346500cff.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="11f6dff1-a885-4b37-bad1-f203036c169e">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>apiHostName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>2394bc13-3831-407a-a529-9f31873ca302.11f6dff1-a885-4b37-bad1-f203036c169e.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="bfa69586-e2da-4df5-90ab-121371545c85">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>apiHostUser</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>2394bc13-3831-407a-a529-9f31873ca302.bfa69586-e2da-4df5-90ab-121371545c85.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="87c35e15-dec0-412c-9c0a-e33ede74825d">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>apiHostPassword</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>2394bc13-3831-407a-a529-9f31873ca302.87c35e15-dec0-412c-9c0a-e33ede74825d.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="08148f76-51be-433d-9570-102fae513617">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>apiHostRepo</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>2394bc13-3831-407a-a529-9f31873ca302.08148f76-51be-433d-9570-102fae513617.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="d7b3c5a2-d4ec-4d3f-a8d7-097d495d2878">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>host</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${apiHostName}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="b5c75845-aea6-4d9a-b617-b646434be198">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>command</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>knife cookbook upload ${cookbookName}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="71e733f7-5b89-4c3c-89f9-19f2a102d4a6">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>currentDirectory</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${apiHostRepo}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="bd17bf84-aa4d-4db7-91dc-6f06f0f4d440">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>user</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${apiHostUser}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="cadafd80-d188-4b8d-b2d0-2712cfa1a4bf">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>password</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${apiHostPassword}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="9f93b0cd-fc4a-4e49-a739-9fc0a4f22581">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>outputPath</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="63d9e669-ae92-44fe-99aa-d327caa9c147">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>characterSet</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="137cfa97-a06e-4fb9-b29f-a08ffc54948a">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>outputCharacterSet</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="1aeeac2e-6413-4cbc-9926-46758a4b6647">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>timeout</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${responseTimeOut}</value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <scriptlet id="fa028668-c6a8-4561-8047-9da830ad3d50">
+    <annotation></annotation>
+    <name>Operation Upload a Cookbook to Server (ea3b8cd4-056b-466f-9ce4-8d44bb3702b5)</name>
+    <script>sErr = scriptletRawResult[&quot;StdErr&quot;];
+sOut = scriptletRawResult[&quot;StdOut&quot;];
+
+if (sErr.length &gt; 0)
+{
+   scriptletResult = sErr;
+   if (sErr != sOut)
+   {
+      scriptletResult = scriptletResult + sOut;
+   }
+}
+else
+{
+   scriptletResult = sOut;
+}</script>
+    <type>RHINO</type>
+  </scriptlet>
+  <possibleResponses>
+    <opResponse id="50655219-23a0-4041-a84c-52b625886b0f">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="7011d771-675a-4d7c-8f55-3fee6930e7dd">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="cc12466a-ff78-4796-9d1f-19992240408b">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="06f48a24-1aff-4ee8-a8b0-c6b6a55d14f3">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="420195a4-5ce5-44f3-83d0-bb8a161496d6">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="418ae85c-55fc-40ff-a193-51c4631d0b08">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="9e3e7061-5587-44cf-b918-0690f28b9d13">
+    <annotation></annotation>
+    <name>returnCode</name>
+    <fieldName>returnCode</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="1b71a6b4-54df-42ce-a9b6-8e08a951ba05">
+    <baseIcon>client_server_app.png</baseIcon>
+    <basePath>/Application/</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <opRef>
+    <refId>632830d9-d5be-47b3-9768-efa99decb443</refId>
+  </opRef>
+  <fieldValues/>
+  <groupAliasRef>
+    <refId>5233030c-af46-432b-a682-b326ca6bf2ae</refId>
+    <refName>RAS_Operator_Path</refName>
+  </groupAliasRef>
+  <overrideGroupAlias>${overrideNRAS}</overrideGroupAlias>
+</operation>

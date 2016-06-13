@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="4cb61870-adc6-4c21-8b36-fcfd45322e19">
+  <descriptionCdata><![CDATA[4cb61870-adc6-4c21-8b36-fcfd45322e19.00cfa321-0786-4465-82d0-a64df5937b0c.prompt=The run recepie or role which you want to add.
+4cb61870-adc6-4c21-8b36-fcfd45322e19.206c8f95-e8c1-4c07-95fa-e8a0c6ee01ec.prompt=The node name.
+4cb61870-adc6-4c21-8b36-fcfd45322e19.49d1d9a0-466a-4720-9f97-3da2eae4c653.prompt=The path to the chef repository (The chef-repo folder).
+4cb61870-adc6-4c21-8b36-fcfd45322e19.67c45a92-779a-4775-8d77-0dff039c9059.prompt=A user name with sufficient rights to run the knife commands.
+4cb61870-adc6-4c21-8b36-fcfd45322e19.6e525921-ec77-4a89-8545-ff46f660cda0.prompt=The apiHostUser's password.
+4cb61870-adc6-4c21-8b36-fcfd45322e19.80587909-241e-4c76-9844-487aa3cd4aac.prompt=Time out for the operation, populates the OOB timeout variable.
+4cb61870-adc6-4c21-8b36-fcfd45322e19.description=\#\#\#\#\#\#\#\#\#\#\#\#\#Additional Parameters\#\#\#\#\#\#\#\#\#\#\#\#\#\#\nThis operations adds recepies and\\or roles to a node.\n\nInputs\:\nrunlistItem - The run recepie or role which you want to add.\nnodeName - The node name.\nresponseTimeOut - Time out for the operation, populates the OOB timeout variable.\napiHostName - The name/fqdn of a host which runs Chefs APi client (knife).\napiHostUser - A user name with sufficient rights to run the knife commands.\napiHostPassword - The apiHostUser's password.\napiHostRepo - The path to the chef repository (The chef-repo folder).\n\nNotes\:\nThe runlistItem input can be used in the following formats\:\n- To add the default recipe of a cookbook, use the cookbook name.\n- To add  a specific recipe from a cookbook , use one of the following\:\n      FQDN Format\: recipe[COOKBOOK\:\:RECIPE_NAME].\n      Cookbook format\: COOKBOOK\:\:RECIPE_NAME.\n- To add a role use role[ROLE_NAME].\n-To add several items, use a comma seperator. e.g \:recipe[COOKBOOK\:\:RECIPE_NAME],COOKBOOK\:\:RECIPE_NAME,role[ROLE_NAME].\n-To add an item before an existing item use -b 'EXISTING ITEM NAME'.\n-To add an item after an existing item use -a 'EXISTING ITEM NAME'.\n\n\#\#\#\#\#\#\#\#\#\#\#\#\#Original Description\#\#\#\#\#\#\#\#\#\#\#\#\#\#\n\n<pre>\nUses WMI to attempt to create a remote process on a machine.  The command passed should be formatted as though it was run on the command line.\n\nCAUTION\: internally 'cmd /c' gets prepended to the command passed.  Also '2>tempfile 1>tempfile' get appended to the command so that we can attempt to capture stdout and stderr.\nSo your command will look like this when executed\:\n\t'cmd /c [yourcommand] 2>temperr 1>tempout'\n\nInputs\:\n    host - Hostname or ip address of the target machine.\n    command - The command you want executed. Special characters\: <, >, (, ), & need to be escaped using the caret (^) character.  The only exception to this rule is when the > character is used to redirect output.\n    user - Username to use for remote WMI impersonation and thread impersonation on the RAS host for this operation (can be left blank).\n    password - Password of the user.\n    outputPath - Network accessible path used by the operation to store temporary files. If not specified it points to \\\\host\\admin$\\temp\\'. If this path is not accessible you should change it to use another share that the host local system account has write access to. By default the path will have to be changed on Windows 2000 systems.\n    currentDirectory - Current directory.\n    characterSet - The character encoding used to write the batch file that will be remotely executed by the operation. Unicode character encodings may not supported for this input (utf-8, utf-16, etc.).  Support for unicode encodings depends on target system capabilities.  By default this encoding will also be used to read the command output that is redirected to temporary files.  If the command output is expected to be of different encoding, specify the different encoding in the outputCharacterSet input.  Default value\: The encoding of the operating system where is RAS installed.\nExamples\: ibm437, shift_jis\n    outputCharacterSet - The character encoding used to read the command output that was redirected to temporary files.  Only need to specify this input if the output of the command is known to output a different character encoding.  As an example\: the 'wmic' command returns utf-16 encoded output.\nExamples\: ibm437, shift_jis, utf-8, utf-16\n    timeout - The number of seconds before assuming the remote process is no longer functional. After the timeout has expired the remote process and all child processes will be terminated.\nDefault value\: 90\n\nResponses\:\n    success - Remote process successfully launched and has completed executing.\n    failure - Unable to start remote process.\n\nResults\:\n    returnResult - Return value from WMI for starting the process (not the exit value of the process).\n    processID - The process id of the remote process.\n    processReturnCode - The return code of the remote process.\n    stdOut - Standard output from the remote process.\n    stdErr - Standard error from the remote process.\n\nNotes\: \nList of possible encoding names (Support for the encoding may depend on the version or language of the RAS OS)\:\n\nEncoding Name\:\tDescription\:\nIBM437\t\tOEM United States\nDOS-720\t\tArabic (DOS)\nibm737\t\tGreek (DOS)\nibm775\t\tBaltic (DOS)\nibm850\t\tWestern European (DOS)\nibm852\t\tCentral European (DOS)\nIBM855\t\tOEM Cyrillic\nibm857\t\tTurkish (DOS)\nIBM00858\t\tOEM Multilingual Latin I\nIBM860\t\tPortuguese (DOS)\nibm861\t\tIcelandic (DOS)\nDOS-862\t\tHebrew (DOS)\nIBM863\t\tFrench Canadian (DOS)\nIBM864\t\tArabic (864)\nIBM865\t\tNordic (DOS)\ncp866\t\tCyrillic (DOS)\nibm869\t\tGreek, Modern (DOS)\nshift_jis\t\tJapanese (Shift-JIS)\ngb2312\t\tChinese Simplified (GB2312)\nks_c_5601-1987\tKorean\nbig5\t\tChinese Traditional (Big5)\nutf-16\t\tUnicode\nunicodeFFFE\t\tUnicode (Big-Endian)\nutf-7\t\tUnicode (UTF-7)\nutf-8\t\tUnicode (UTF-8)\nutf-32\t\tUnicode (UTF-32)\nutf-32BE\t\tUnicode (UTF-32 Big-Endian)\nJohab\t\tKorean (Johab)\nus-ascii\t\tUS-ASCII\nkoi8-r\t\tCyrillic (KOI8-R)\neuc-jp\t\tJapanese (EUC)\nEUC-CN\t\tChinese Simplified (EUC)\neuc-kr\t\tKorean (EUC)\nhz-gb-2312\t\tChinese Simplified (HZ)\nGB18030\t\tChinese Simplified (GB18030)\n</pre>
+4cb61870-adc6-4c21-8b36-fcfd45322e19.df85159e-fb4e-4f8e-b6db-7b494728a267.prompt=The name/fqdn of a host which runs Chefs APi client (knife).
+]]></descriptionCdata>
+  <annotation>4cb61870-adc6-4c21-8b36-fcfd45322e19.description</annotation>
+  <name>Add a Run List Item to Node</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="00cfa321-0786-4465-82d0-a64df5937b0c">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>runlistItem</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>4cb61870-adc6-4c21-8b36-fcfd45322e19.00cfa321-0786-4465-82d0-a64df5937b0c.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="206c8f95-e8c1-4c07-95fa-e8a0c6ee01ec">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>nodeName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>4cb61870-adc6-4c21-8b36-fcfd45322e19.206c8f95-e8c1-4c07-95fa-e8a0c6ee01ec.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="80587909-241e-4c76-9844-487aa3cd4aac">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>responseTimeOut</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>4cb61870-adc6-4c21-8b36-fcfd45322e19.80587909-241e-4c76-9844-487aa3cd4aac.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="df85159e-fb4e-4f8e-b6db-7b494728a267">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>apiHostName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>4cb61870-adc6-4c21-8b36-fcfd45322e19.df85159e-fb4e-4f8e-b6db-7b494728a267.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="67c45a92-779a-4775-8d77-0dff039c9059">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>apiHostUser</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>4cb61870-adc6-4c21-8b36-fcfd45322e19.67c45a92-779a-4775-8d77-0dff039c9059.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="6e525921-ec77-4a89-8545-ff46f660cda0">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>apiHostPassword</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>4cb61870-adc6-4c21-8b36-fcfd45322e19.6e525921-ec77-4a89-8545-ff46f660cda0.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="49d1d9a0-466a-4720-9f97-3da2eae4c653">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>apiHostRepo</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt>4cb61870-adc6-4c21-8b36-fcfd45322e19.49d1d9a0-466a-4720-9f97-3da2eae4c653.prompt</prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="71f7c3b6-c2d8-4d9e-ae67-0fab1fd53113">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>host</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${apiHostName}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="245e1059-94c5-4cad-8d87-a6e376aa4ff9">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>command</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>knife node run_list add ${nodeName} &apos;${runlistItem}&apos;</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="2865cc61-4f61-4475-a658-e6035881cacc">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>currentDirectory</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${apiHostRepo}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="872e7d6f-3831-42ff-b23f-560bda50b92c">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>user</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${apiHostUser}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="0b5dbbcb-2a44-45e1-be9f-fa39aff2cae9">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>password</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${apiHostPassword}</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="8c575fcc-778d-42a4-84d2-0f4b25df3cf6">
+      <annotation></annotation>
+      <toContextKey></toContextKey>
+      <fromContextKey></fromContextKey>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>outputPath</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="1b2b2472-bb94-4d3c-a786-df04606a31c3">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>characterSet</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="1dde6370-f1fa-4943-b0ec-5647d602e85a">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>outputCharacterSet</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="3c2ad824-ddad-4784-948b-c6f477990af7">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>timeout</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>${responseTimeOut}</value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <scriptlet id="9d0fc48e-8d25-44f2-91a1-f1c37f440d0a">
+    <annotation></annotation>
+    <name>Operation Add a Run List Item to Node (268490aa-df25-472b-bfd0-c0b1209a708b)</name>
+    <script>sErr = scriptletRawResult[&quot;StdErr&quot;];
+sOut = scriptletRawResult[&quot;StdOut&quot;];
+
+if (sErr.length &gt; 0)
+{
+   scriptletResult = sErr;
+   if (sErr != sOut)
+   {
+      scriptletResult = scriptletResult + sOut;
+   }
+}
+else
+{
+   scriptletResult = sOut;
+}</script>
+    <type>RHINO</type>
+  </scriptlet>
+  <possibleResponses>
+    <opResponse id="def600f6-6f2f-48a5-90fa-a098892b4dba">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="a14c5a95-543d-45ab-8a20-1d11326ed35a">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="2d02f885-66d0-4f82-8a33-7cbc057c56d6">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="21573a58-87d8-44e4-91df-0b3ccad122dd">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="cb7df2c1-c96e-44c1-a0a4-e7296c22ab33">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="c5654f02-e605-4b62-ae73-b71e4b9f0184">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="c02982bb-e29c-4ac8-ada8-648f84843e1e">
+    <annotation></annotation>
+    <name>returnCode</name>
+    <fieldName>returnCode</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="06e58099-7aa3-41dd-853f-41797d3714b1">
+    <baseIcon>application_windows.png</baseIcon>
+    <basePath>/Application/</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <opRef>
+    <refId>632830d9-d5be-47b3-9768-efa99decb443</refId>
+  </opRef>
+  <fieldValues/>
+  <groupAliasRef>
+    <refId>5233030c-af46-432b-a682-b326ca6bf2ae</refId>
+    <refName>RAS_Operator_Path</refName>
+  </groupAliasRef>
+  <overrideGroupAlias>${overrideNRAS}</overrideGroupAlias>
+</operation>
