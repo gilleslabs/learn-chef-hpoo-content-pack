@@ -11,7 +11,7 @@ These flows are based on [HP-OO Chef Content Pack 1.1.4] (https://hpln.hpe.com/c
 
 ## Requirements
 
-- [learn-chef] (https://github.com/gilleslabs/learn-chef) **Chef Server [environment]** (https://github.com/gilleslabs/learn-chef/blob/master/chef-server.md) up and running. Tested on 1.1
+- [learn-chef] (https://github.com/gilleslabs/learn-chef) Chef Server [environment] (https://github.com/gilleslabs/learn-chef/blob/master/chef-server.md) up and running. Tested on 1.1
 - [HP Operations Orchestration] (https://hub.docker.com/r/hpsoftware/ooce/). Tested on 10.5
 - HP Operations Orchestration Studio. Tested on 10.5
 - [HP Operations Orchestration Base Content Pack] (https://hpln.hpe.com/contentoffering/oo-base-content) . Tested on 1.6.2  
@@ -31,6 +31,7 @@ These flows are based on [HP-OO Chef Content Pack 1.1.4] (https://hpln.hpe.com/c
 git clone https://github.com/gilleslabs/learn-chef
 cd learn-chef
 ```
+
 
 2. If not already done, launch Chef Server environment (Chef Server + Windows 2012R2 Workstation + Node)
 
