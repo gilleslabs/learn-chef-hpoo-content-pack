@@ -42,10 +42,14 @@ b. If not already done, launch Chef Server environment (Chef Server + Windows 20
 + For the sake of simplicity you can also simply disable Windows Firewall on chef-mgmt-win VM.
 
 
+####Import learn-chef project in HP-OO Studio
 
-####Integrate HP-OO learn-chef content Pack in HP Operations Orchestrator Studio:
-
-
+1. Download learn-chef-hpoo-content pack [source code] (https://github.com/gilleslabs/learn-chef-hpoo-content-pack/releases)
+2. Extract the **learn-chef** folder contained in the source code archive into your HP-OO Studio Workspace folder(usually in C:\users\username\.oo\Workspace)
+3. In HP-OO Menu Toolbar:
++ Click on **File**
++ Then click on **Import Project**
++ Browse and select **<HP-OO Studio Worlplace folder>\learn-chef**
 
 
 ## Credits
