@@ -20,7 +20,9 @@ These flows are based on [HP-OO Chef Content Pack 1.1.4] (https://hpln.hpe.com/c
 
 ## Available Flows
 
+Below is the list of currently validated flows:
 
++ **Deploy Cookbook on Server** : this flow Search for a cookbook in the community and deploy it on the chef server
 
 ## Installation
 
