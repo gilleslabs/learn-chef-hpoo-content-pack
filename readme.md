@@ -49,7 +49,7 @@ b. If not already done, launch Chef Server environment (Chef Server + Windows 20
 3. In HP-OO Menu Toolbar:
 + Click on **File**
 + Then click on **Import Project**
-+ Browse and select **<HP-OO Studio Worlplace folder>\learn-chef**
++ Browse and select **learn-chef** folder in your HP-OO Studio Workplace folder
 
 
 ## Credits
